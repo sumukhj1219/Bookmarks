@@ -25,7 +25,6 @@ const page = () => {
                     </Button>
                 </div>
             </div>
-
             <Categories />
         </div>
     )
