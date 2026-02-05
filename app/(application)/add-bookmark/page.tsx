@@ -1,3 +1,4 @@
+import AddBookmark from '@/components/features/add-bookmark/AddBookmark'
 import React from 'react'
 
 const page = () => {
@@ -9,6 +10,8 @@ const page = () => {
                     <h3 className='text-md text-neutral-500'>Save a new bookmark to your collection</h3>
                 </span>
             </div>
+
+            <AddBookmark />
         </div>
     )
 }
