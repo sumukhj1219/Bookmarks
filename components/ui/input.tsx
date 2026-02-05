@@ -6,9 +6,10 @@ interface InputProps {
     onChange?: () => void;
     value?: string | number
     id?: string
+    type?:string
 }
 
-const Input = ({ className, placeholder, onChange, value, id }: InputProps) => {
+const Input = ({ className, placeholder, onChange, value, id , type}: InputProps) => {
     return (
         <input
             id={id}
@@ -16,6 +17,7 @@ const Input = ({ className, placeholder, onChange, value, id }: InputProps) => {
             placeholder={placeholder || "Text"}
             onChange={onChange}
             value={value}
+            type={type || "text"}
         />
     )
 }

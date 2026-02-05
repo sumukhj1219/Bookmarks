@@ -1,4 +1,4 @@
-import React from 'react'
+import Settings from '@/components/features/settings/Settings'
 
 const page = () => {
     return (
@@ -9,6 +9,7 @@ const page = () => {
                     <h3 className='text-md text-neutral-500'>Manage your app preferences</h3>
                 </span>
             </div>
+            <Settings />
         </div>
     )
 }
