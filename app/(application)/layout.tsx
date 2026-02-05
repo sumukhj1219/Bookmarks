@@ -9,7 +9,9 @@ const ApplicationLayout = ({ children }: { children: React.ReactNode }) => {
                 <Sidebar />
                 <div className='w-full flex flex-col h-full'>
                     <Navbar />
-                    {children}
+                    <div className='p-5'>
+                        {children}
+                    </div>
                 </div>
             </div>
         </div>
