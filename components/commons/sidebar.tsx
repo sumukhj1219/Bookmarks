@@ -13,7 +13,7 @@ const Sidebar = () => {
                 {
                     sidebarConfig.map((item) => (
                         <Link
-                            href={`/${item.url}`}
+                            href={`${item.url}`}
                             key={item.id}
                             className='flex items-center gap-x-2 hover:bg-neutral-950/50 p-2 rounded-lg'>
                             <item.icon className='w-4 h-4' />

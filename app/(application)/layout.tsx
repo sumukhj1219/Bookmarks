@@ -4,12 +4,14 @@ import React from 'react'
 
 const ApplicationLayout = ({ children }: { children: React.ReactNode }) => {
     return (
-        <div>
+        <div className='w-full'>
             <div className='flex'>
                 <Sidebar />
-                <Navbar />
+                <div className='w-full flex flex-col h-full'>
+                    <Navbar />
+                    {children}
+                </div>
             </div>
-            {children}
         </div>
     )
 }
