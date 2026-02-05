@@ -1,6 +1,6 @@
+import Home from '@/components/features/home/Home'
 import Button from '@/components/ui/button'
 import { ArrowDown01Icon, List } from 'lucide-react'
-import React from 'react'
 
 const page = () => {
   return (
@@ -23,6 +23,7 @@ const page = () => {
           </Button>
         </div>
       </div>
+      <Home />
     </div>
   )
 }
