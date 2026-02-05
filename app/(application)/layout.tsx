@@ -6,7 +6,7 @@ const ApplicationLayout = ({ children }: { children: React.ReactNode }) => {
     return (
         <div className='flex h-screen w-full overflow-hidden'>
             <Sidebar />
-            <div className='w-full flex-1 flex flex-col h-full'>
+            <div className='w-full flex-1 flex flex-col h-full min-w-0'>
                 <Navbar />
                 <main className='p-5 flex-1 overflow-y-auto'>
                     {children}
