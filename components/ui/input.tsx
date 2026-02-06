@@ -3,14 +3,15 @@ import { cn } from '@/lib/utils';
 interface InputProps {
     className?: string;
     placeholder?: string;
-    onChange?: () => void;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     value?: string | number
     id?: string
     type?:string
     name?:string;
+    required?:boolean
 }
 
-const Input = ({ className, placeholder, onChange, value, id , type, name}: InputProps) => {
+const Input = ({ className, placeholder, onChange, value, id , type, name, required}: InputProps) => {
     return (
         <input
             id={id}
@@ -20,6 +21,7 @@ const Input = ({ className, placeholder, onChange, value, id , type, name}: Inpu
             value={value}
             type={type || "text"}
             name={name}
+            required={required}
         />
     )
 }
