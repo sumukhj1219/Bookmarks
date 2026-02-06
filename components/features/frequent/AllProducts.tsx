@@ -16,7 +16,10 @@ const AllProducts = ({ allProducts }: AllProductsProps) => {
             <FrequentHeader grid={grid} setGrid={setGrid} />
             <div className={`${grid ? "grid grid-cols-2 gap-2" : "flex flex-col gap-4"}`}>
                 {allProducts.map((product) => (
-                    <FrequentProductCard key={product.id} product={product} />
+                    <FrequentProductCard
+                        key={product.id}
+                        product={product}
+                    />
                 ))}
             </div>
         </div>

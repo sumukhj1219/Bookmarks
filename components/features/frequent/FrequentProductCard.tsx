@@ -8,6 +8,14 @@ interface ProductCardProps {
     product: Product;
 }
 
+async function deleteProduct(productId: string) {
+    await fetch(`https://dummyjson.com/products/${productId}`, {
+        method: 'DELETE',
+    })
+        .then(res => res.json())
+        .then(console.log);
+}
+
 const FrequentProductCard = ({ product }: ProductCardProps) => {
     return (
         <div className="group relative flex w-full flex-col gap-y-4 rounded-md border border-neutral-800 bg-[#121212] p-4 transition-all hover:border-neutral-700 md:flex-row md:items-start md:justify-between">
@@ -44,7 +52,11 @@ const FrequentProductCard = ({ product }: ProductCardProps) => {
                         Visit website <ExternalLink size={14} />
                     </Button>
                 </Link>
-                <Button className="p-2  w-10  rounded-md bg-white text-black hover:bg-neutral-200 transition-colors">
+                <Button 
+                onClick={()=>{
+                    // deleteProduct()
+                }}
+                className="p-2  w-10  rounded-md bg-white text-black hover:bg-neutral-200 transition-colors">
                     <Trash2 size={18} />
                 </Button>
             </div>
