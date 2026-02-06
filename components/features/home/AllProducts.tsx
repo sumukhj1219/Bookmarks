@@ -11,7 +11,7 @@ interface AllProductsProps {
 
 const AllProducts = ({ allProducts }: AllProductsProps) => {
     const [filteredProducts, setFilteredProducts] = useState<Product[]>(allProducts)
-    const [grid, setGrid] = useState<boolean>(false)
+    const [grid, setGrid] = useState<boolean>(true)
     return (
         <div className='flex flex-col gap-y-5'>
             <HomeHeader

@@ -1,11 +1,16 @@
 "use client"
 import Button from '@/components/ui/button'
 import Input from '@/components/ui/input'
-import { List, Plus, X } from 'lucide-react'
+import { Grid, List, Plus, X } from 'lucide-react'
 import React, { useState } from 'react'
 import AddNewCategory from './AddNewCategory'
 
-const CategoryHeader = () => {
+interface CategoryHeaderProps {
+    grid: boolean;
+    setGrid: (grid: boolean) => void;
+}
+
+const CategoryHeader = ({ grid, setGrid }: CategoryHeaderProps) => {
     const [isAdding, setIsAdding] = useState(false)
     return (
         <div className='flex flex-col gap-y-5'>
@@ -16,19 +21,31 @@ const CategoryHeader = () => {
                 </span>
 
                 <div className='flex items-center justify-center gap-x-2'>
-                    <Button 
+                    <Button
                         onClick={() => setIsAdding(!isAdding)}
                         className='flex items-center justify-center rounded-md w-32'
                     >
                         <Plus className='w-4 h-4 ml-1' />
                         Add New
                     </Button>
-                    
+
                     <Input className='w-72' placeholder='Search Categories...' />
-                    
-                    <Button className='w-22 rounded-md h-10 bg-transparent text-neutral-100 border border-neutral-800 hover:bg-neutral-900'>
-                        <List className='w-4 h-4' />
-                        List
+
+                    <Button 
+                    onClick={()=>setGrid((prev:boolean)=>!prev)}
+                    className='w-22 rounded-md h-10 bg-transparent text-neutral-100 border border-neutral-800 hover:bg-neutral-900'>
+                        {
+                            !grid ?
+                                <>
+                                    <Grid className='w-4 h-4' />
+                                    Grid
+                                </>
+                                :
+                                <>
+                                    <List className='w-4 h-4' />
+                                    List
+                                </>
+                        }
                     </Button>
                 </div>
             </div>
