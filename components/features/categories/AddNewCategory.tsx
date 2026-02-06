@@ -10,7 +10,7 @@ interface AddNewCategoryProps {
 
 const AddNewCategory = ({ mount }: AddNewCategoryProps) => {
     const [isVisible, setIsVisible] = useState(mount);
-
+    
     useEffect(() => {
         setIsVisible(mount);
     }, [mount]);
