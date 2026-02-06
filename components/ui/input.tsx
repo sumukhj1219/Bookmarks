@@ -1,0 +1,29 @@
+import { cn } from '@/lib/utils';
+
+interface InputProps {
+    className?: string;
+    placeholder?: string;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    value?: string | number
+    id?: string
+    type?:string
+    name?:string;
+    required?:boolean
+}
+
+const Input = ({ className, placeholder, onChange, value, id , type, name, required}: InputProps) => {
+    return (
+        <input
+            id={id}
+            className={cn("max-w-xl w-full bg-neutral-950 border border-neutral-800 h-10 rounded-md text-sm px-5", className)}
+            placeholder={placeholder || "Text"}
+            onChange={onChange}
+            value={value}
+            type={type || "text"}
+            name={name}
+            required={required}
+        />
+    )
+}
+
+export default Input

@@ -1,8 +1,9 @@
+import Login from '@/components/features/auth/login'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>page</div>
+    <Login />
   )
 }
 
