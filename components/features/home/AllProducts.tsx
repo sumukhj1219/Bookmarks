@@ -21,7 +21,12 @@ const AllProducts = ({ allProducts }: AllProductsProps) => {
             />
             <div className={`${grid ? "grid grid-cols-4" : "flex flex-col"} gap-3`}>
                 {filteredProducts.map((product) => (
-                    <ProductCard key={product.id} product={product} />
+                    <ProductCard
+                        filteredProducts={filteredProducts}
+                        setFilteredProducts={setFilteredProducts}
+                        key={product.id}
+                        product={product}
+                    />
                 ))}
             </div>
         </div>
