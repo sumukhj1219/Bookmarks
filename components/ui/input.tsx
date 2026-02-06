@@ -7,9 +7,10 @@ interface InputProps {
     value?: string | number
     id?: string
     type?:string
+    name?:string;
 }
 
-const Input = ({ className, placeholder, onChange, value, id , type}: InputProps) => {
+const Input = ({ className, placeholder, onChange, value, id , type, name}: InputProps) => {
     return (
         <input
             id={id}
@@ -18,6 +19,7 @@ const Input = ({ className, placeholder, onChange, value, id , type}: InputProps
             onChange={onChange}
             value={value}
             type={type || "text"}
+            name={name}
         />
     )
 }

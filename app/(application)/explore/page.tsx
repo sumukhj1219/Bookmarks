@@ -1,3 +1,4 @@
+import Explore from '@/components/features/explore/Explore'
 import React from 'react'
 
 const page = () => {
@@ -9,6 +10,7 @@ const page = () => {
                     <h3 className='text-md text-neutral-500'>Select topics you love to unlock top-rated websites tailored to your interests</h3>
                 </span>
             </div>
+            <Explore />
         </div>
     )
 }

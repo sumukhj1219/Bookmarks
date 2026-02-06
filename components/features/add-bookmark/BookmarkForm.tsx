@@ -1,22 +1,30 @@
-import Form from 'next/form'
+"use client"
+
 import Input from '@/components/ui/input'
 import Label from '@/components/ui/label'
 import Button from '@/components/ui/button'
+import Select from '@/components/ui/select'
+import { categoryOptions } from '@/config/categories'
+import { addProduct } from './actions/addProduct'
 
 const BookmarkForm = () => {
+
     return (
-        <Form action={""} className='flex flex-col gap-y-3 max-w-2xl w-full'>
+        <form action={addProduct} className='flex flex-col gap-y-3 max-w-2xl w-full'>
             <Label htmlFor='url' className='text-sm'>URL*</Label>
-            <Input id='url' className='w-full' placeholder='https://example.com' />
+            <Input id='url' name='url'  className='w-full' placeholder='https://example.com' />
 
             <Label htmlFor='name' className='text-sm'>Name</Label>
-            <Input id='name' className='w-full' placeholder='Figma' />
+            <Input id='name' name='name' className='w-full' placeholder='Figma' />
 
             <Label htmlFor='description' className='text-sm'>Description</Label>
-            <Input id='description' className='w-full' placeholder='Cloud-based UI/UX design tool' />
+            <Input id='description' name='description' className='w-full' placeholder='Cloud-based UI/UX design tool' />
 
-            <Button className='w-xl'>Save Bookmark</Button>
-        </Form>
+            <Label htmlFor='category' className='text-sm'>Category</Label>
+            <Select items={categoryOptions} id="category" name='category' />
+
+            <Button className='w-xl' type={"submit"}>Save Bookmark</Button>
+        </form>
     )
 }
 
