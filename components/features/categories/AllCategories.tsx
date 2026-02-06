@@ -15,16 +15,21 @@ const AllCategories = ({ allCategories }: AllCategoriesProps) => {
 
     return (
         <div className='flex flex-col gap-y-5'>
-        <CategoryHeader grid={grid} setGrid={setGrid} />
-        <div className={`${grid ? "grid grid-cols-4 gap-4" : "flex flex-col gap-4"}`}>
-            {
-                filteredCategories.map((category) => (
-                    <CategoryCard
-                        category={category}
-                    />
-                ))
-            }
-        </div>
+            <CategoryHeader
+                setFilteredCategories={setFilteredCategories}
+                grid={grid}
+                setGrid={setGrid}
+                initialCategories={allCategories}
+            />
+            <div className={`${grid ? "grid grid-cols-4 gap-4" : "flex flex-col gap-4"}`}>
+                {
+                    filteredCategories.map((category) => (
+                        <CategoryCard
+                            category={category}
+                        />
+                    ))
+                }
+            </div>
         </div>
     )
 }

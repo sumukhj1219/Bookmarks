@@ -4,14 +4,31 @@ import Input from '@/components/ui/input'
 import { Grid, List, Plus, X } from 'lucide-react'
 import React, { useState } from 'react'
 import AddNewCategory from './AddNewCategory'
+import { Category } from '@/types/Category'
 
 interface CategoryHeaderProps {
     grid: boolean;
     setGrid: (grid: boolean) => void;
+    setFilteredCategories: (filteredCategories: Category[]) => void;
+    initialCategories: Category[]
 }
 
-const CategoryHeader = ({ grid, setGrid }: CategoryHeaderProps) => {
+const CategoryHeader = ({ grid, setGrid, setFilteredCategories, initialCategories }: CategoryHeaderProps) => {
     const [isAdding, setIsAdding] = useState(false)
+    const [search, setSearch] = useState('')
+
+    function handleSearch(e: React.ChangeEvent<HTMLInputElement>) {
+        setSearch(e.target.value)
+        if (search === '') {
+            setFilteredCategories(initialCategories)
+        } else {
+            const filtered = initialCategories.filter((category) =>
+                category.name.toLowerCase().includes(search.toLowerCase())
+            )
+            setFilteredCategories(filtered)
+        }
+    }
+
     return (
         <div className='flex flex-col gap-y-5'>
             <div className='flex items-center justify-between'>
@@ -29,11 +46,18 @@ const CategoryHeader = ({ grid, setGrid }: CategoryHeaderProps) => {
                         Add New
                     </Button>
 
-                    <Input className='w-72' placeholder='Search Categories...' />
+                    <Input
+                        onChange={(e) => {
+                            handleSearch(e)
+                        }}
+                        className='w-72'
+                        placeholder='Search Categories...'
+                        value={search}
+                    />
 
-                    <Button 
-                    onClick={()=>setGrid((prev:boolean)=>!prev)}
-                    className='w-22 rounded-md h-10 bg-transparent text-neutral-100 border border-neutral-800 hover:bg-neutral-900'>
+                    <Button
+                        onClick={() => setGrid((prev: boolean) => !prev)}
+                        className='w-22 rounded-md h-10 bg-transparent text-neutral-100 border border-neutral-800 hover:bg-neutral-900'>
                         {
                             !grid ?
                                 <>

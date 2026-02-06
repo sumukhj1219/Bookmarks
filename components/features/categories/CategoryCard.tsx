@@ -7,7 +7,7 @@ interface CategoryCardProps {
 
 const CategoryCard = ({category}:CategoryCardProps) => {
   return (
-    <Link key={category.slug} href={`/categories/${category.slug}`} className='p-3 rounded-sm  border border-neutral-800 text-xl hover:bg-neutral-900'>
+    <Link key={category.name} href={`/categories/${category.slug}`} className='p-3 rounded-sm  border border-neutral-800 text-xl hover:bg-neutral-900'>
         {category.name}
     </Link>
   )

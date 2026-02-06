@@ -1,9 +1,12 @@
 import ExploreResults from '@/components/features/explore/ExploreResults'
-import React from 'react'
+import Spinner from '@/components/ui/spinner'
+import React, { Suspense } from 'react'
 
 const page = () => {
   return (
-    <ExploreResults />
+    <Suspense fallback={<Spinner />}>
+      <ExploreResults />
+    </Suspense>
   )
 }
 

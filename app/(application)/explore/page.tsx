@@ -1,5 +1,6 @@
 import Explore from '@/components/features/explore/Explore'
-import React from 'react'
+import Spinner from '@/components/ui/spinner'
+import React, { Suspense } from 'react'
 
 const page = () => {
     return (
@@ -10,7 +11,9 @@ const page = () => {
                     <h3 className='text-md text-neutral-500'>Select topics you love to unlock top-rated websites tailored to your interests</h3>
                 </span>
             </div>
-            <Explore />
+            <Suspense fallback={<Spinner />}>
+                <Explore />
+            </Suspense>
         </div>
     )
 }

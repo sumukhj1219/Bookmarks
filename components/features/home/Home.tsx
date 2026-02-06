@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import AllProducts from './AllProducts'
 import HomeHeader from './HomeHeader'
 

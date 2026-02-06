@@ -1,4 +1,6 @@
 import Settings from '@/components/features/settings/Settings'
+import Spinner from '@/components/ui/spinner'
+import { Suspense } from 'react'
 
 const page = () => {
     return (
@@ -9,7 +11,9 @@ const page = () => {
                     <h3 className='text-md text-neutral-500'>Manage your app preferences</h3>
                 </span>
             </div>
-            <Settings />
+            <Suspense fallback={<Spinner />}>
+                <Settings />
+            </Suspense>
         </div>
     )
 }
